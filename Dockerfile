@@ -13,8 +13,8 @@ ENV DATABASE_PASSWORD=sGQj8rrNWj
 WORKDIR /app
 
 # Copy the Spring Boot JAR file into the container
-# Replace 'your-application.jar' with the actual name of your JAR
-COPY target/platform.jar /app/app.jar
+
+COPY target/catch-up-platform.jar /app/app.jar
 
 # Expose the port your Spring Boot application listens on (default is 8080)
 EXPOSE 8080

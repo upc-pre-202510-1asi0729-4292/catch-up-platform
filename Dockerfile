@@ -14,7 +14,7 @@ WORKDIR /app
 
 # Copy the Spring Boot JAR file into the container
 
-COPY target/catch-up-platform.jar /app/app.jar
+COPY target/*.jar /app/app.jar
 
 # Expose the port your Spring Boot application listens on (default is 8080)
 EXPOSE 8080

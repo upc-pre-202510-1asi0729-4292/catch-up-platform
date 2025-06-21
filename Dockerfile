@@ -3,11 +3,6 @@ FROM maven:3.9.9-eclipse-temurin-24 AS build
 # Set the active profile for the Spring Boot application
 ENV SPRING_PROFILES_ACTIVE=prod
 
-# Set environment variables for the application
-ENV DATABASE_URL=sql3.freesqldatabase.com
-ENV DATABASE_NAME=sql3785811
-ENV DATABASE_USER=sql3785811
-ENV DATABASE_PASSWORD=sGQj8rrNWj
 # Set the working directory inside the container
 WORKDIR /app
 COPY pom.xml .

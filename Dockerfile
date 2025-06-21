@@ -1,6 +1,5 @@
 # Use a lightweight OpenJDK 24 base image
-FROM maven:3.9.10-openjdk:24-jdk-slim AS build
-
+FROM maven:3.9.9-eclipse-temurin-24 AS build
 # Set the active profile for the Spring Boot application
 ENV SPRING_PROFILES_ACTIVE=prod
 
@@ -18,7 +17,7 @@ COPY src ./src
 RUN mvn package -DskipTests
 
 # Copy the Spring Boot JAR file into the container
-FROM openjdk:24-jdk-slim AS production
+FROM eclipse-temurin:24-jre AS runtime
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 
